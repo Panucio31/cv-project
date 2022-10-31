@@ -1,43 +1,28 @@
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 
-function PersonalInfo() {
-  return <>
-    <div>
-      <h1>Personal Information</h1>
-    <Form>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label></Form.Label>
-        <Form.Control type="text" placeholder="First Name" />
-      </Form.Group>
-      <Form.Group className="mb-3 " controlId="formBasicEmail">
-        <Form.Label></Form.Label>
-        <Form.Control type="text" placeholder="Last Name" />
-      </Form.Group>
-      <Form.Group className="mb-3 " controlId="formBasicEmail">
-        <Form.Label></Form.Label>
-        <Form.Control type="text" placeholder="Title" />
-      </Form.Group>
-      <Form.Group className="mb-3 " controlId="formBasicEmail">
-        <Form.Label></Form.Label>
-        <Form.Control type="text" placeholder="Address" />
-      </Form.Group>
-      <Form.Group className="mb-3 " controlId="formBasicEmail">
-        <Form.Label></Form.Label>
-        <Form.Control type="text" placeholder="Phone Number" />
-      </Form.Group>
-      <Form.Group className="mb-3 " controlId="formBasicEmail">
-        <Form.Label></Form.Label>
-        <Form.Control type="email" placeholder="Email" />
-      </Form.Group>
 
-      <Form.Group className="mb-3 " controlId="formBasicPassword">
-        <Form.Label></Form.Label>
-        <Form.Control type="text" placeholder="Description" />
-      </Form.Group>
-    </Form>
-    </div>
-  </>;
+function PersonalInfo(props) {
+console.log(props)
+  return (
+    <>
+      <div className="container">
+        <h1>Personal Information</h1>
+
+        <input 
+        type="text" 
+        placeholder="First Name" 
+        id="fName"
+        value={props.fName}
+        onChange={props.onChange}
+        />
+
+        <input type="text" placeholder="Last Name" />
+        <input type="text" placeholder="Address" />
+        <input type="number" placeholder="Phone Number" />
+        <input type="email" placeholder="Email" />
+        <input type="text" placeholder="Description" />
+      </div>
+    </>
+  );
 }
 
 export default PersonalInfo;

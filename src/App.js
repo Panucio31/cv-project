@@ -1,11 +1,21 @@
-
+import { useState } from 'react';
 import './App.css';
-import PersonalInfo from './components/PersonalInfo';
+import FilledCv from './components/FilledCv';
+import InfoPage from './components/InfoPage';
+
 
 function App() {
+
+const [input, setInput] = useState('')
+
+const handleChange = (e) => {
+  setInput(e.target.value)
+}
+
   return (
-    <div className="App">
-      <PersonalInfo/>
+    <div className="cv-container">
+     <InfoPage/>
+     <FilledCv onChange={handleChange} form={input}/>
     </div>
   );
 }

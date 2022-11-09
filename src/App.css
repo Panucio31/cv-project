@@ -1,17 +1,134 @@
 body {
-    margin: 0;
-    padding: 10px;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  
+}
+#root {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .cv-container {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  border: 1px solid;
 }
 
-.container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    
+.info-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container-pi,
+.container-ed,
+.container-xp {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
+
+input {
+  width: 100%;
+  height: 30px;
+  margin-top: 10px;
+  border: none;
+  background-color: #eaeaea;
+}
+
+button {
+  width: 150px;
+  height: 30px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+.add-btn {
+  background-color: #66f766;
+}
+
+.delete-btn {
+  background-color: #f13939;
+}
+
+.generate-btn {
+  background-color: #597EFA;
+}
+
+.reset-btn {
+  background-color: #F38383;
+}
+hr {
+  width: 100%;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date-input input {
+  width: 150px;
+}
+
+textarea {
+  border: none;
+  text-align: center;
+  background-color: #eaeaea;
+  margin-top: 10px;
+}
+
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.name {
+  width: 200px;
+  height: 50px;
+  border: 1px solid;
+  margin-top: 20px;
+  font-size: 42px;
+  text-align: center;
+}
+
+.profesion {
+  width: 100px;
+  height: 30px;
+  font-size: 25px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid;
+  margin-top: 10px;
 }

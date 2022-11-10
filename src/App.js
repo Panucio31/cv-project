@@ -1,6 +1,6 @@
 
 import './App.css';
-import FilledCv from './components/FilledCv';
+import FilledCv from './components/FilledCvComponents/FilledCv';
 import InfoPage from './components/InfoPage';
 
 

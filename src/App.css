@@ -132,3 +132,30 @@ textarea {
   border: 1px solid;
   margin-top: 10px;
 }
+
+.vertical {
+  width: 2px;
+  height: 100px;
+  margin: 10px;
+}
+
+.info-field {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  
+ 
+}
+
+.experiance  {
+  width: 50%;
+  display: flex;
+  justify-content: right;
+  
+}
+.education {
+  width: 50%;
+  display: flex;
+  justify-content: left;
+}
+

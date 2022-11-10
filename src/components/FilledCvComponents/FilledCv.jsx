@@ -1,5 +1,7 @@
+import FilledEduc from "./FilledEduc";
+import FilledExp from "./FilledExp";
+
 function FilledCv() {
-  console.log();
   return (
     <>
       <div className="cv-container">
@@ -10,8 +12,16 @@ function FilledCv() {
             <img src="profile.jpg" alt="" />
           </div>
         </div>
-        <div className="">
-
+        <div className="info-field">
+          <div className="experiance">
+            <h3>Experiance</h3>
+            <FilledExp/>
+          </div>
+          <hr className="vertical"/>
+          <div className="education">
+            <h3>Education</h3>
+              <FilledEduc/>
+          </div>
         </div>
       </div>
     </>

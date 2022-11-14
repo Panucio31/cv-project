@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
+
+const eduContext = createContext()
 
 function Education() {
   const [educationInfo, setEducationInfo] = useState({
@@ -9,31 +11,16 @@ function Education() {
     endDate: "",
   });
 
-  const handleUniChange = (e) => {
-    setEducationInfo({
-      ...educationInfo,
-      uniName: e.target.value,
-    });
+  
+
+  const handleChange = (e) => {
+    const newInput = e.target.name;
+    setEducationInfo({ ...educationInfo, [newInput]: e.target.value });
   };
 
-  const handleDegree = (e) => {
-    
-    setEducationInfo({ 
-      ...educationInfo,
-      degree: e.target.value,
-     });
-  };
-
-  const handleSubject = (e) => {
-    console.log(e.target.value)
-    setEducationInfo({
-      ...educationInfo,
-      subject: e.target.value,
-    })
-  }
- console.log(educationInfo.subject);
+ 
   return (
-    <>
+    <eduContext.Provider value={educationInfo}>
       <div className="info-container">
         <h1>Education</h1>
         <div className="container-ed">
@@ -42,13 +29,14 @@ function Education() {
             name="uniName"
             placeholder="University Name"
             value={educationInfo.uniName}
-            onChange={(e) => handleUniChange(e)}
+            onChange={handleChange}
           />
           <input
+            name="degree"
             type="text"
             placeholder="Degree"
             value={educationInfo.degree}
-            onChange={(e) => handleDegree(e)}
+            onChange={handleChange}
           />
         </div>
         <textarea
@@ -57,22 +45,24 @@ function Education() {
           rows="10"
           placeholder="Describe Your Subject"
           value={educationInfo.subject}
-          onChange = {(e) => handleSubject(e)}
+          onChange={handleChange}
         ></textarea>
         <div className="date-input">
           <label htmlFor="date">Started From:</label>
           <input
+            name="startDate"
             type="date"
             id="date"
             value={educationInfo.startDate}
-            // onChange={(e) => handleChange(e)}
+            onChange={handleChange}
           />
           <label htmlFor="date">Until:</label>
           <input
+            name="endDate"
             type="date"
             id="date"
             value={educationInfo.endDate}
-            // onChange={(e) => handleChange(e)}
+            onChange={handleChange}
           />
         </div>
         <div className="btn-container">
@@ -81,7 +71,7 @@ function Education() {
         </div>
         <hr />
       </div>
-    </>
+    </eduContext.Provider>
   );
 }
 

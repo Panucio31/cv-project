@@ -1,7 +1,10 @@
 import FilledEduc from "./FilledEduc";
 import FilledExp from "./FilledExp";
+// import PersonalInfo from "../PersonalInfo";
 
 function FilledCv() {
+  
+  
   return (
     <>
       <div className="cv-container">

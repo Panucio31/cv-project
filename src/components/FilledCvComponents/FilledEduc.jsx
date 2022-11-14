@@ -1,7 +1,7 @@
 
 
-function FilledEduc(props) {
-  console.log(props)
+function FilledEduc() {
+  
   return (
     <>
       <div className="dates">{}</div>

@@ -1,8 +1,8 @@
-function PersonalInfo({ appState, setAppState, personalInfo }) {
-  console.log(personalInfo)
+function PersonalInfo(props) {
+  console.log(props.appState.personalInfo)
   const handleChange = (e) => {
     const newInfo = e.target.name;
-    setAppState({ ...appState, [newInfo]: e.target.value });
+    props.setAppState({ ...props.appState, [newInfo]: e.target.value });
   };
 
   return (
@@ -14,7 +14,7 @@ function PersonalInfo({ appState, setAppState, personalInfo }) {
           <input
             type="text"
             name="profession"
-            value={personalInfo.profession}
+            value={props.appState.profession}
             onChange={handleChange}
             placeholder='What is your profesion?'
           />
@@ -24,35 +24,35 @@ function PersonalInfo({ appState, setAppState, personalInfo }) {
             name="name"
             type="text"
             placeholder="First Name"
-            value={personalInfo.name}
+            value={props.appState.name}
             onChange={handleChange}
           />
           <input
             name="surname"
             type="text"
             placeholder="Last Name"
-            value={personalInfo.surname}
+            value={props.appState.surname}
             onChange={handleChange}
           />
           <input
             name="adress"
             type="text"
             placeholder="Address"
-            value={personalInfo.adress}
+            value={props.appState.adress}
             onChange={handleChange}
           />
           <input
             name="number"
             type="number"
             placeholder="Phone Number"
-            value={personalInfo.number}
+            value={props.appState.number}
             onChange={handleChange}
           />
           <input
             name="email"
             type="email"
             placeholder="Email"
-            value={personalInfo.email}
+            value={props.appState.email}
             onChange={handleChange}
           />
         </div>
@@ -62,7 +62,7 @@ function PersonalInfo({ appState, setAppState, personalInfo }) {
           cols="30"
           rows="10"
           placeholder="Professional Summary"
-          value={personalInfo.summary}
+          value={props.appState.summary}
           onChange={handleChange}
         ></textarea>
       </div>

@@ -2,15 +2,14 @@ import FilledEduc from "./FilledEduc";
 import FilledExp from "./FilledExp";
 // import PersonalInfo from "../PersonalInfo";
 
-function FilledCv() {
-  
+function FilledCv(props) {
   
   return (
     <>
       <div className="cv-container">
         <div className="header">
-          <div className="name">{}</div>
-          <div className="profesion">{}</div>
+          <div className="name">{props.appState.name} {props.appState.surname}</div>
+          <div className="profesion">{props.appState.profession}</div>
           <div className="avatar">
             <img src="profile.jpg" alt="" />
           </div>

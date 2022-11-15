@@ -2,10 +2,10 @@ import Education from "./Education";
 import Experience from "./Experiance";
 import PersonalInfo from "./PersonalInfo";
 
-function InfoPage() {
+function InfoPage(props) {
   return (
     <div className="input-container">
-      <PersonalInfo />
+      <PersonalInfo appState={props.appState} setAppState={props.setAppState} />
       <Experience />
       <Education />
       <div className='btn-container'>

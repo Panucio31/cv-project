@@ -1,26 +1,22 @@
-import { createContext, useState } from "react";
+import {  useState } from "react";
 
-const eduContext = createContext()
-
-function Education() {
+function Education(props) {
   const [educationInfo, setEducationInfo] = useState({
     uniName: "",
     degree: "",
-    subject: " ",
+    subject: "",
     startDate: "",
     endDate: "",
   });
 
-  
-
   const handleChange = (e) => {
     const newInput = e.target.name;
-    setEducationInfo({ ...educationInfo, [newInput]: e.target.value });
+    props.setAppState({ ...props.appState, [newInput]: e.target.value });
   };
 
  
   return (
-    <eduContext.Provider value={educationInfo}>
+    
       <div className="info-container">
         <h1>Education</h1>
         <div className="container-ed">
@@ -71,7 +67,7 @@ function Education() {
         </div>
         <hr />
       </div>
-    </eduContext.Provider>
+    
   );
 }
 

@@ -1,14 +1,14 @@
-
-
-
-function FilledEduc() {
+function FilledEduc(props) {
+  console.log(props.appState);
   return (
-    <>
-      <div className="dates" >{}</div>
-      <div className="possition">{}</div>
-      <div className="company-uni">{}</div>
-      <div className="description">{}</div>
-    </>
+      {props.appState.eduInfo.map((item) => (
+        <div>
+          <div className="dates">{item.startDate}-{item.endDate}</div>
+          <div className="possition">{item.degree}</div>
+          <div className="company-uni">{item.uniName}</div>
+          <div className="description">{item.subject}</div>
+        </div>
+      ))}
   );
 }
 

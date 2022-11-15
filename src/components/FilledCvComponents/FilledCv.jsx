@@ -22,7 +22,7 @@ function FilledCv(props) {
           <hr className="vertical"/>
           <div className="education">
             <h3>Education</h3>
-              <FilledEduc/>
+              <FilledEduc appState={props.appState}/>
           </div>
         </div>
       </div>

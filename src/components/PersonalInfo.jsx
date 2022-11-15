@@ -1,5 +1,5 @@
 function PersonalInfo(props) {
-  console.log(props.appState.personalInfo)
+  
   const handleChange = (e) => {
     const newInfo = e.target.name;
     props.setAppState({ ...props.appState, [newInfo]: e.target.value });

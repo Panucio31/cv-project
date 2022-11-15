@@ -1,6 +1,7 @@
 import {  useState } from "react";
 
 function Education(props) {
+  console.log(props.appState.eduInfo)
   const [educationInfo, setEducationInfo] = useState({
     uniName: "",
     degree: "",
@@ -11,13 +12,20 @@ function Education(props) {
 
   const handleChange = (e) => {
     const newInput = e.target.name;
-    props.setAppState({ ...props.appState, [newInput]: e.target.value });
+    setEducationInfo({ ...educationInfo, [newInput]: e.target.value });
   };
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    props.setAppState({...props.appState, [props.appState.eduInfo]: {...educationInfo, setEducationInfo}})
+  }
+
+  console.log(educationInfo)
  
   return (
     
-      <div className="info-container">
+      <form onSubmit={onSubmit} className="info-container">
         <h1>Education</h1>
         <div className="container-ed">
           <input
@@ -66,7 +74,7 @@ function Education(props) {
           <button className="delete-btn">Delete</button>
         </div>
         <hr />
-      </div>
+      </form>
     
   );
 }

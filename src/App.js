@@ -14,14 +14,10 @@ function App() {
       summary: "",
       profession: "",
     },
-    eduInfo: [
-      { uniName: "", degree: "", subject: "", startDate: "", endDate: "" },
-    ],
-    expInfo: [
-      { position: "", company: "", description: "", strDate: "", endDate: "" },
-    ],
+    eduInfo: [],
+    expInfo: [],
   });
-
+  console.log(appState)
   return (
     <>
       <InfoPage appState={appState} setAppState={setAppState} />

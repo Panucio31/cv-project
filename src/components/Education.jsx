@@ -1,7 +1,7 @@
 import {  useState } from "react";
 
 function Education(props) {
-  console.log(props.appState.eduInfo)
+  
   const [educationInfo, setEducationInfo] = useState({
     uniName: "",
     degree: "",
@@ -18,10 +18,9 @@ function Education(props) {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    props.setAppState({...props.appState, [props.appState.eduInfo]: {...educationInfo, setEducationInfo}})
+    props.setAppState({...props.appState, eduInfo: [...props.appState.eduInfo, educationInfo]})
   }
-
-  console.log(educationInfo)
+  
  
   return (
     

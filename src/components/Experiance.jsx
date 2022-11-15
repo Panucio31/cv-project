@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Experience() {
+function Experience(props) {
   const [experience, setExperience] = useState({
     position: "",
     company: "",
@@ -13,10 +13,15 @@ function Experience() {
     const newEntery = e.target.name;
     setExperience({...experience, [newEntery]: e.target.value})
   };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    props.setAppState({...props.appState, expInfo: [...props.appState.expInfo, experience]})
+  }
   
   return (
     <>
-      <div className="info-container">
+      <form onSubmit={onSubmit} className="info-container">
         <h1>Experience</h1>
         <div className="container-xp">
           <input
@@ -65,7 +70,7 @@ function Experience() {
           <button className="add-btn">Add</button>
           <button className="delete-btn">Delete</button>
         </div>
-      </div>
+      </form>
       <hr />
     </>
   );

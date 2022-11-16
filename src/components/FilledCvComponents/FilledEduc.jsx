@@ -1,15 +1,17 @@
 function FilledEduc(props) {
+
+
+  console.log(props.appState.eduInfo)
+  
   const handleClick = (id) => {
     const filtered = props.appState.eduInfo.filter((edu) => edu.id !== id);
     console.log(filtered);
-    props.setAppState({ ...props.appState.eduInfo, filtered });
+    props.setAppState( ...props.appState, { eduInfo: filtered });
   };
 
-  if (props.appState.eduInfo.length === 0) {
-    return;
-  }
+  // console.log(props.appState.eduInfo.id)
   return props.appState.eduInfo.map((item) => (
-    <div id={item.startDate} key={item.startDate}>
+    <div key={item.startDate} id={item.id}>
       <div className="dates">
         <strong>
           {item.startDate}-{item.endDate}

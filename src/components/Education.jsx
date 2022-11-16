@@ -15,11 +15,14 @@ function Education(props) {
     subject: "",
     startDate: "",
     endDate: "",
+    id:"",
   });
+
+  const newID = Date.now()
 
   const handleChange = (e) => {
     const newInput = e.target.name;
-    setEducationInfo({ ...educationInfo, [newInput]: e.target.value });
+    setEducationInfo({ ...educationInfo, [newInput]: e.target.value, id: newID });
   };
 
   const onSubmit = (e) => {
@@ -31,6 +34,8 @@ function Education(props) {
     });
     setEducationInfo(initialState)
   };
+
+
 
   return (
     <form onSubmit={onSubmit} className="info-container">

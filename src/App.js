@@ -17,11 +17,11 @@ function App() {
     eduInfo: [],
     expInfo: [],
   });
-  console.log(appState)
+  
   return (
     <>
       <InfoPage appState={appState} setAppState={setAppState} />
-      <FilledCv appState={appState} />
+      <FilledCv appState={appState} setAppState={setAppState}/>
     </>
   );
 }

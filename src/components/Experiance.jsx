@@ -1,5 +1,13 @@
 import { useState } from "react";
 
+const initialValues = {
+  position: "",
+  company: "",
+  description: "",
+  strDate: "",
+  endDate: "",
+};
+
 function Experience(props) {
   const [experience, setExperience] = useState({
     position: "",
@@ -11,14 +19,18 @@ function Experience(props) {
 
   const handleChange = (e) => {
     const newEntery = e.target.name;
-    setExperience({...experience, [newEntery]: e.target.value})
+    setExperience({ ...experience, [newEntery]: e.target.value });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    props.setAppState({...props.appState, expInfo: [...props.appState.expInfo, experience]})
-  }
-  
+    props.setAppState({
+      ...props.appState,
+      expInfo: [...props.appState.expInfo, experience],
+    });
+    setExperience(initialValues);
+  };
+
   return (
     <>
       <form onSubmit={onSubmit} className="info-container">

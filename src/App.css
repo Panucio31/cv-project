@@ -164,3 +164,13 @@ textarea {
   justify-content: left;
 }
 
+h5 {
+  margin: 0;
+}
+
+span { 
+  color: red;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}

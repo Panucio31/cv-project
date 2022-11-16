@@ -15,11 +15,14 @@ function Experience(props) {
     description: "",
     strDate: "",
     endDate: "",
+    id: "",
   });
+
+  const id = Date.now()
 
   const handleChange = (e) => {
     const newEntery = e.target.name;
-    setExperience({ ...experience, [newEntery]: e.target.value });
+    setExperience({ ...experience, [newEntery]: e.target.value, id });
   };
 
   const onSubmit = (e) => {

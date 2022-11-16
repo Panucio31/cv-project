@@ -6,7 +6,7 @@ function FilledEduc(props) {
   const handleClick = (id) => {
     const filtered = props.appState.eduInfo.filter((edu) => edu.id !== id);
     console.log(filtered);
-    props.setAppState( ...props.appState, { eduInfo: filtered });
+    props.setAppState( {...props.appState,  eduInfo: filtered });
   };
 
   // console.log(props.appState.eduInfo.id)
@@ -24,7 +24,7 @@ function FilledEduc(props) {
         <i>{item.degree}</i>
       </div>
       <div className="description">{item.subject}</div>
-      <span onClick={handleClick}>X</span>
+      <span onClick={() => handleClick(item.id)}>X</span>
     </div>
   ));
 }

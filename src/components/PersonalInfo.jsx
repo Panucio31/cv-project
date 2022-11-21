@@ -1,9 +1,12 @@
 function PersonalInfo(props) {
+
   
   const handleChange = (e) => {
     const newInfo = e.target.name;
     props.setAppState({ ...props.appState, [newInfo]: e.target.value });
   };
+
+  
 
   return (
     <>
@@ -16,7 +19,7 @@ function PersonalInfo(props) {
             name="profession"
             value={props.appState.profession}
             onChange={handleChange}
-            placeholder='What is your profesion?'
+            placeholder="What is your profesion?"
           />
         </div>
         <div className="container-pi">
@@ -56,6 +59,8 @@ function PersonalInfo(props) {
             onChange={handleChange}
           />
         </div>
+        <input type="file" name="avatar" onChange={props.handleFileChange}/>
+       
         <textarea
           name="summary"
           id="sum"

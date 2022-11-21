@@ -12,7 +12,7 @@ function FilledCv(props) {
           </div>
           <div className="profesion">{props.appState.profession}</div>
           <div className="avatar">
-            <img src="profile.jpg" alt="" />
+            <img src={props.avatar} width={"100px"} alt="user avatar"/>
           </div>
         </div>
         <div className="info-field">

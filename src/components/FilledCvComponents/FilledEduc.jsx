@@ -9,6 +9,10 @@ function FilledEduc(props) {
     props.setAppState( {...props.appState,  eduInfo: filtered });
   };
 
+  const editOnClick = (id) => {
+    
+  }
+
   // console.log(props.appState.eduInfo.id)
   return props.appState.eduInfo.map((item) => (
     <div key={item.startDate} id={item.id}>
@@ -25,6 +29,7 @@ function FilledEduc(props) {
       </div>
       <div className="description">{item.subject}</div>
       <span onClick={() => handleClick(item.id)}>X</span>
+      <button onClick={() => editOnClick(item.id)}>Edit</button>
     </div>
   ));
 }

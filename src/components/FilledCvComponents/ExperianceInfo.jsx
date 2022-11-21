@@ -1,10 +1,9 @@
-function FilledExp(props) {
-
+function ExperianceInfo(props) {
   const handleClick = (id) => {
     const filtered = props.appState.expInfo.filter((edu) => edu.id !== id);
-    
-    props.setAppState( {...props.appState,  expInfo: filtered });
-  }
+
+    props.setAppState({ ...props.appState, expInfo: filtered });
+  };
 
   return props.appState.expInfo.map((item) => (
     <div key={item.strDate}>
@@ -25,4 +24,4 @@ function FilledExp(props) {
   ));
 }
 
-export default FilledExp;
+export default ExperianceInfo;

@@ -8,21 +8,25 @@ const initialState = {
   endDate: "",
 };
 
-function Education(props) {
+function EducationForm(props) {
   const [educationInfo, setEducationInfo] = useState({
     uniName: "",
     degree: "",
     subject: "",
     startDate: "",
     endDate: "",
-    id:"",
+    id: "",
   });
 
-  const newID = Date.now()
+  const newID = Date.now();
 
   const handleChange = (e) => {
     const newInput = e.target.name;
-    setEducationInfo({ ...educationInfo, [newInput]: e.target.value, id: newID });
+    setEducationInfo({
+      ...educationInfo,
+      [newInput]: e.target.value,
+      id: newID,
+    });
   };
 
   const onSubmit = (e) => {
@@ -32,10 +36,8 @@ function Education(props) {
       ...props.appState,
       eduInfo: [...props.appState.eduInfo, educationInfo],
     });
-    setEducationInfo(initialState)
+    setEducationInfo(initialState);
   };
-
-
 
   return (
     <form onSubmit={onSubmit} className="info-container">
@@ -91,4 +93,4 @@ function Education(props) {
   );
 }
 
-export default Education;
+export default EducationForm;

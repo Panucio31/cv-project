@@ -8,7 +8,7 @@ const initialValues = {
   endDate: "",
 };
 
-function Experience(props) {
+function ExperienceForm(props) {
   const [experience, setExperience] = useState({
     position: "",
     company: "",
@@ -91,4 +91,4 @@ function Experience(props) {
   );
 }
 
-export default Experience;
+export default ExperienceForm;

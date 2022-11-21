@@ -1,4 +1,4 @@
-function PersonalInfo(props) {
+function PersonalInfoForm(props) {
 
   
   const handleChange = (e) => {
@@ -76,4 +76,4 @@ function PersonalInfo(props) {
   );
 }
 
-export default PersonalInfo;
+export default PersonalInfoForm;

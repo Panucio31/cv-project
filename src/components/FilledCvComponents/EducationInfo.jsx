@@ -1,4 +1,4 @@
-function FilledEduc(props) {
+function EducationInfo(props) {
 
 
   console.log(props.appState.eduInfo)
@@ -10,7 +10,7 @@ function FilledEduc(props) {
   };
 
   const editOnClick = (id) => {
-    
+
   }
 
   // console.log(props.appState.eduInfo.id)
@@ -29,9 +29,9 @@ function FilledEduc(props) {
       </div>
       <div className="description">{item.subject}</div>
       <span onClick={() => handleClick(item.id)}>X</span>
-      <button onClick={() => editOnClick(item.id)}>Edit</button>
+      <button style={{width:"50px", height:"20px", backgroundColor:"green", marginLeft:"10px"}} onClick={() => editOnClick(item.id)}>Edit</button>
     </div>
   ));
 }
 
-export default FilledEduc;
+export default EducationInfo;
